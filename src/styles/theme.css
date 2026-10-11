@@ -1,0 +1,501 @@
+/* ==========================================================================
+   Thème de l'application (pages connectées)
+   Harmonise les composants Bootstrap (cartes, tableaux, boutons, formulaires,
+   badges, alertes...) sur la charte du tableau de bord : fond clair neutre,
+   bordures fines, un seul bleu d'accent, aucun dégradé.
+   Tout est limité à .app-layout : la connexion et la page d'accueil publique
+   ne sont pas touchées.
+   ========================================================================== */
+
+.app-layout {
+  /* Palette Bootstrap remplacée : les classes text-*, bg-*, border-* suivent */
+  --bs-primary: #2563eb;
+  --bs-primary-rgb: 37, 99, 235;
+  --bs-success: #16a34a;
+  --bs-success-rgb: 22, 163, 74;
+  --bs-danger: #dc2626;
+  --bs-danger-rgb: 220, 38, 38;
+  --bs-warning: #d97706;
+  --bs-warning-rgb: 217, 119, 6;
+  --bs-info: #0284c7;
+  --bs-info-rgb: 2, 132, 199;
+  --bs-secondary: #64748b;
+  --bs-secondary-rgb: 100, 116, 139;
+  --bs-light-rgb: 245, 247, 251;
+  --bs-dark-rgb: 15, 23, 42;
+  --bs-body-color: #0f172a;
+  --bs-body-color-rgb: 15, 23, 42;
+  --bs-secondary-color: #64748b;
+  --bs-border-color: #e6eaf1;
+  --bs-link-color: #2563eb;
+  --bs-link-color-rgb: 37, 99, 235;
+  --bs-link-hover-color: #1d4ed8;
+  --bs-link-hover-color-rgb: 29, 78, 216;
+  --bs-border-radius: 8px;
+  --bs-border-radius-lg: 10px;
+
+  --t-ink: #0f172a;
+  --t-muted: #64748b;
+  --t-line: #e6eaf1;
+  --t-field: #d5dce8;
+  --t-surface: #ffffff;
+  --t-accent: #2563eb;
+  --t-accent-dark: #1d4ed8;
+}
+
+/* ---------- Typographie ---------- */
+.app-layout .text-muted {
+  color: var(--t-muted) !important;
+}
+.app-layout .text-dark {
+  color: var(--t-ink) !important;
+}
+.app-layout h1,
+.app-layout h2,
+.app-layout h3,
+.app-layout h4,
+.app-layout h5,
+.app-layout h6 {
+  color: var(--t-ink);
+  letter-spacing: -0.01em;
+}
+.app-layout .display-6 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.app-layout .display-5,
+.app-layout .display-4 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.app-layout .fs-5 {
+  font-size: 1rem !important;
+}
+.app-layout .fw-bold {
+  font-weight: 700 !important;
+}
+
+/* ---------- Fonds ---------- */
+.app-layout .bg-light {
+  background-color: #f5f7fb !important;
+}
+
+/* ---------- Cartes et surfaces ---------- */
+.app-layout .card {
+  background: var(--t-surface);
+  border: 1px solid var(--t-line);
+  border-radius: 10px;
+}
+.app-layout .card.border-0 {
+  border: 1px solid var(--t-line) !important;
+}
+.app-layout .card-header {
+  background: var(--t-surface);
+  border-bottom: 1px solid var(--t-line);
+}
+.app-layout .card-footer {
+  background: #f8fafc;
+  border-top: 1px solid var(--t-line);
+}
+.app-layout .shadow-sm {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+}
+.app-layout .shadow {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+}
+.app-layout .shadow-lg {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1) !important;
+}
+.app-layout .rounded-4 {
+  border-radius: 10px !important;
+}
+.app-layout .rounded-3 {
+  border-radius: 8px !important;
+}
+/* Encadré sans classe card (ex. état vide) */
+.app-layout .bg-white.rounded-4:not(.card) {
+  border: 1px solid var(--t-line);
+}
+
+/* ---------- Tableaux ---------- */
+.app-layout .table {
+  --bs-table-bg: transparent;
+  --bs-table-hover-bg: #f8fafc;
+  --bs-table-border-color: #eef1f6;
+  color: var(--t-ink);
+}
+.app-layout .table > thead,
+.app-layout .table > thead.bg-light {
+  background: #f8fafc !important;
+}
+.app-layout .table > thead th {
+  background: #f8fafc;
+  color: var(--t-muted) !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--t-line);
+  white-space: nowrap;
+}
+.app-layout .table > tbody > tr > td {
+  border-color: #eef1f6;
+  vertical-align: middle;
+}
+.app-layout .table-hover > tbody > tr:hover > * {
+  background-color: #f8fafc;
+  color: var(--t-ink);
+}
+
+/* ---------- Boutons ---------- */
+.app-layout .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.app-layout .btn-sm {
+  font-size: 13px;
+  border-radius: 7px;
+}
+.app-layout .btn-lg {
+  font-size: 15px;
+  border-radius: 9px;
+}
+.app-layout .btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.app-layout .btn-primary {
+  background-color: var(--t-accent);
+  border-color: var(--t-accent);
+  color: #fff;
+}
+.app-layout .btn-primary:hover,
+.app-layout .btn-primary:focus,
+.app-layout .btn-primary:active {
+  background-color: var(--t-accent-dark) !important;
+  border-color: var(--t-accent-dark) !important;
+  color: #fff !important;
+}
+.app-layout .btn-primary:disabled,
+.app-layout .btn-primary.disabled {
+  background-color: var(--t-accent);
+  border-color: var(--t-accent);
+  opacity: 0.55;
+}
+
+.app-layout .btn-outline-primary {
+  color: var(--t-accent);
+  border-color: #bcd0fb;
+  background: transparent;
+}
+.app-layout .btn-outline-primary:hover,
+.app-layout .btn-outline-primary:active {
+  background-color: var(--t-accent) !important;
+  border-color: var(--t-accent) !important;
+  color: #fff !important;
+}
+
+.app-layout .btn-outline-secondary {
+  color: #475569;
+  border-color: var(--t-field);
+  background: #fff;
+}
+.app-layout .btn-outline-secondary:hover,
+.app-layout .btn-outline-secondary:active {
+  background-color: #f1f5f9 !important;
+  border-color: #c3ccdb !important;
+  color: var(--t-ink) !important;
+}
+
+.app-layout .btn-light {
+  background-color: #fff;
+  border-color: var(--t-line);
+  color: #334155;
+}
+.app-layout .btn-light:hover,
+.app-layout .btn-light:active {
+  background-color: #f1f5f9 !important;
+  border-color: #d5dce8 !important;
+  color: var(--t-ink) !important;
+}
+
+.app-layout .btn-success {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  color: #fff;
+}
+.app-layout .btn-success:hover,
+.app-layout .btn-success:active {
+  background-color: #15803d !important;
+  border-color: #15803d !important;
+  color: #fff !important;
+}
+
+.app-layout .btn-danger {
+  background-color: #dc2626;
+  border-color: #dc2626;
+  color: #fff;
+}
+.app-layout .btn-danger:hover,
+.app-layout .btn-danger:active {
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
+  color: #fff !important;
+}
+.app-layout .btn-outline-danger {
+  color: #dc2626;
+  border-color: #f3c0c0;
+  background: transparent;
+}
+.app-layout .btn-outline-danger:hover,
+.app-layout .btn-outline-danger:active {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #fff !important;
+}
+
+.app-layout .btn-warning {
+  background-color: #d97706;
+  border-color: #d97706;
+  color: #fff;
+}
+.app-layout .btn-warning:hover,
+.app-layout .btn-warning:active {
+  background-color: #b45309 !important;
+  border-color: #b45309 !important;
+  color: #fff !important;
+}
+.app-layout .btn-outline-warning {
+  color: #b45309;
+  border-color: #f3d6a8;
+  background: transparent;
+}
+.app-layout .btn-outline-warning:hover {
+  background-color: #d97706 !important;
+  border-color: #d97706 !important;
+  color: #fff !important;
+}
+
+.app-layout .btn-dark {
+  background-color: var(--t-ink);
+  border-color: var(--t-ink);
+}
+.app-layout .btn-outline-dark {
+  color: var(--t-ink);
+  border-color: var(--t-field);
+}
+.app-layout .btn-outline-dark:hover {
+  background-color: var(--t-ink) !important;
+  border-color: var(--t-ink) !important;
+  color: #fff !important;
+}
+.app-layout .btn-link {
+  font-weight: 600;
+}
+
+/* ---------- Formulaires ---------- */
+.app-layout .form-control,
+.app-layout .form-select {
+  border: 1px solid var(--t-field);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--t-ink);
+  background-color: #fff;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+.app-layout .form-control::placeholder {
+  color: #94a3b8;
+}
+.app-layout .form-control:focus,
+.app-layout .form-select:focus {
+  border-color: var(--t-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.app-layout .form-control:disabled,
+.app-layout .form-control[readonly],
+.app-layout .form-select:disabled {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+.app-layout .form-control.is-invalid,
+.app-layout .form-select.is-invalid {
+  border-color: #dc2626;
+}
+.app-layout .form-control.is-invalid:focus,
+.app-layout .form-select.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+.app-layout .form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+.app-layout .form-text {
+  color: var(--t-muted);
+  font-size: 12.5px;
+}
+.app-layout .input-group-text {
+  background: #f8fafc;
+  border: 1px solid var(--t-field);
+  color: var(--t-muted);
+  border-radius: 8px;
+}
+.app-layout .form-check-input {
+  border-color: #b8c2d4;
+}
+.app-layout .form-check-input:checked {
+  background-color: var(--t-accent);
+  border-color: var(--t-accent);
+}
+.app-layout .form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  border-color: var(--t-accent);
+}
+
+/* ---------- Badges ---------- */
+.app-layout .badge {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Alertes ---------- */
+.app-layout .alert {
+  border-radius: 8px;
+  border-width: 1px;
+  box-shadow: none;
+  font-size: 14px;
+}
+.app-layout .alert-danger {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+.app-layout .alert-success {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+.app-layout .alert-warning {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+.app-layout .alert-info {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+.app-layout .alert-secondary {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+/* ---------- Pagination ---------- */
+.app-layout .pagination {
+  gap: 4px;
+}
+.app-layout .page-link {
+  border: 1px solid var(--t-line);
+  border-radius: 8px !important;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+}
+.app-layout .page-link:hover {
+  background: #f1f5f9;
+  color: var(--t-ink);
+  border-color: #d5dce8;
+}
+.app-layout .page-item.active .page-link {
+  background: var(--t-accent);
+  border-color: var(--t-accent);
+  color: #fff;
+}
+.app-layout .page-item.disabled .page-link {
+  background: #f8fafc;
+  color: #b8c2d4;
+}
+
+/* ---------- Onglets, listes, fenêtres ---------- */
+.app-layout .nav-tabs {
+  border-bottom: 1px solid var(--t-line);
+}
+.app-layout .nav-tabs .nav-link {
+  color: var(--t-muted);
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 0.65rem 1rem;
+}
+.app-layout .nav-tabs .nav-link:hover {
+  color: var(--t-ink);
+  border-bottom-color: #c3ccdb;
+}
+.app-layout .nav-tabs .nav-link.active {
+  color: var(--t-accent);
+  background: transparent;
+  border-bottom-color: var(--t-accent);
+}
+.app-layout .list-group-item {
+  border-color: var(--t-line);
+}
+.app-layout .modal-content {
+  border: 1px solid var(--t-line);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
+}
+.app-layout .modal-header,
+.app-layout .modal-footer {
+  border-color: var(--t-line);
+}
+.app-layout .dropdown-menu {
+  border: 1px solid var(--t-line);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+.app-layout .dropdown-item {
+  font-size: 14px;
+  border-radius: 6px;
+}
+.app-layout .progress {
+  height: 8px;
+  background: #eef1f6;
+  border-radius: 999px;
+}
+.app-layout hr {
+  border-color: var(--t-line);
+  opacity: 1;
+}
+
+/* ---------- Mise en page des pages ---------- */
+.app-layout .content > .container-fluid,
+.app-layout .content > .container {
+  max-width: 1480px;
+}
+@media (min-width: 768px) {
+  .app-layout .container-fluid.px-md-5 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Squelettes de chargement : aplat doux, sans dégradé */
+.app-layout .skeleton {
+  background: #eef1f6;
+  animation: theme-pulse 1.4s ease-in-out infinite;
+}
+@keyframes theme-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}

@@ -1,0 +1,45 @@
+/* Styles globaux de l'application.
+   NOTE : le fichier précédent était encore celui généré par défaut par Vite
+   (thème sombre, body en flex centré) — jamais nettoyé après l'ajout de
+   Bootstrap. Resté en place, il provoquait des mises en page incohérentes
+   (body centré au lieu de occuper toute la largeur). */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8f9fc;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Animation de chargement utilisée par <SkeletonBox> / <ListSkeleton> / <FormSkeleton>
+   (components/ui/Skeleton.tsx). Une seule définition pour toute l'app. */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.search-input:focus {
+  border-color: #4e73df !important;
+  box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.1) !important;
+}
